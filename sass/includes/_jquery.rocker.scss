@@ -73,8 +73,8 @@ $transition-speed: 0.5s;
 	@include transition-duration($transition-speed);
 	
 	overflow: hidden;
-	min-width: 50px;
-	width: 5%; // Minimum width for our boxes
+	min-width: 20px;
+	width: 2%; // Minimum width for our boxes
 
 	&.active {
 		@include flex(10);

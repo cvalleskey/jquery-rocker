@@ -32,6 +32,10 @@ body {
 .js-rocker {
 	@include box-shadow(0 0 1em rgba(0,0,0,0.1));
 	background: #FFF;
+
+	h2 {
+		font-size: 1.5em;
+	}
 }
 
 .js-rocker-item {
@@ -96,7 +100,17 @@ body {
 
 /* Media queries */
 
-@media screen and (min-width: 0px) { }
+@media screen and (min-width: 0px) {
+
+	.js-rocker {
+		font-size: 12px;
+	}
+	.js-rocker-item {
+		padding: 0.25em;
+		width: 1em;
+	}
+
+}
 
 @media screen and (min-width: 240px) { }
 
@@ -104,11 +118,29 @@ body {
 
 @media screen and (min-width: 480px) { }
 
-@media screen and (min-width: 600px) { }
+@media screen and (min-width: 600px) {
+
+	.js-rocker {
+		font-size: 14px;
+	}
+	.js-rocker-item {
+		padding: 0.5em;
+		width: 1em;
+	}
+}
 
 @media screen and (min-width: 768px) { }
 
-@media screen and (min-width: 1024px) { }
+@media screen and (min-width: 1024px) {
+
+	.js-rocker {
+		font-size: 1em;
+	}
+	.js-rocker-item {
+		padding: 1em;
+		width: 2em;
+	}
+}
 
 @media screen and (min-width: 1280px) { }
 

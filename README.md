@@ -1,5 +1,5 @@
 jquery.rocker
 ======
 
-A new take on navigation
+A jQuery plugin for responsive menus
 

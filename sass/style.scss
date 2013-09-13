@@ -1,0 +1,125 @@
+/* Imports */
+
+@import "compass/reset";
+@import "compass/css3";
+
+@import "includes/defaults";
+@import "includes/jquery.rocker";
+
+
+/* Styles */
+
+body {
+	padding: 1em;
+}
+
+.btn-menu {
+	position: relative;
+	z-index: 101;
+	@include box-shadow(0 0.15em 0.35em -0.15em rgba(0,0,0,0.5));
+}
+
+#menu-container {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	top: 4.5em;
+	width: 100%;
+}
+
+/* Custom rocker CSS */
+
+.js-rocker {
+	@include box-shadow(0 0 1em rgba(0,0,0,0.1));
+	background: #FFF;
+}
+
+.js-rocker-item {
+
+	padding: 1em;
+
+	+ .js-rocker-item {
+		border-left: 1px solid rgba(0,0,0,0.1);
+	}
+}
+
+/* */
+
+.btn {
+	@include border-radius(0.25em);
+	@include background(linear-gradient(top, #FFF, #EEE));
+	@include transition-property(all);
+	@include transition-duration(0.5s);
+	display: inline-block;
+	padding: 0.4em 0.9em;
+	font-weight: bold;
+	cursor: pointer;
+	background-color: #FFF;
+	border: 0.1em solid rgba(0,0,0,0.15);
+	border-color: #DDD #CCC #BBB;
+	font-weight: bold;
+	&:active, &.active {
+		@include background(linear-gradient(top, $color-active - #222, $color-active));
+		background-color: $color-active;
+		color: #FFF;
+		&:before, &:after {
+			border-color: #FFF;
+		}
+	}
+	&.btn-menu {
+		&:before {
+			content: " ";
+			display: inline-block;
+			width: 0.75em;
+			height: 0.125em;
+			border-top: 0.375em double;
+			border-bottom: 0.125em solid;
+			border-color: #000;
+			position: relative;
+			top: -0.0625em;
+		}
+		&:active, &.active {
+			&:before {
+				border-color: #FFF;
+			}
+		}
+	}
+}
+
+
+/* Desktop hook hover classes */
+
+.is-desktop { }
+
+.is-mobile { }
+
+
+/* Media queries */
+
+@media screen and (min-width: 0px) { }
+
+@media screen and (min-width: 240px) { }
+
+@media screen and (min-width: 320px) { }
+
+@media screen and (min-width: 480px) { }
+
+@media screen and (min-width: 600px) { }
+
+@media screen and (min-width: 768px) { }
+
+@media screen and (min-width: 1024px) { }
+
+@media screen and (min-width: 1280px) { }
+
+
+/* Debug CSS */
+
+#debug {
+	font-size: 12px;
+	text-align: center;
+	position: absolute;
+	top: 30px;
+	display: none;
+	width: 100%;
+}

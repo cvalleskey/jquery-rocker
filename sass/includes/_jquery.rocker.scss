@@ -1,0 +1,91 @@
+/* Mixins */
+
+@mixin flexbox() {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+
+@mixin flex($values) {
+	-webkit-box-flex: $values;
+	-moz-box-flex: $values;
+	-webkit-flex: $values;
+	-ms-flex: $values;
+	flex: $values;
+}
+
+/* Variables */
+
+$transition-speed: 0.5s;
+
+
+/* CSS */
+
+.js-rocker {
+
+	@include flexbox();
+	@include transition(all, $transition-speed);
+
+	width: 100%;
+	height: 0%;
+	min-height: 0px; // For Safari
+	
+	bottom: 0px;
+	position: absolute;
+	z-index: 100;
+	
+	list-style: none;
+	
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+
+	&.active {
+		height: 100%;
+		cursor: default;
+	}
+
+	&.open-left, &.open-right {
+		width: 0%;
+		height: 100%;
+		&.active {
+			width: 100%;
+		}
+	}
+	&.open-right {
+		right: 0;
+		&.active {
+			width: 100%;
+		}
+	}
+	&.open-top {
+		top: 0;
+		bottom: auto
+	}
+}
+
+.js-rocker-item {
+
+	@include flex(1);
+	@include transition-property(all);
+	@include transition-duration($transition-speed);
+	
+	overflow: hidden;
+	min-width: 50px;
+	width: 5%; // Minimum width for our boxes
+
+	&.active {
+		@include flex(10);
+	}
+}
+
+.js-rocker-use-legacy {
+	.js-rocker-item {
+		&.active {
+			@include flex(1);
+			width: 100%;
+		}
+	}
+}

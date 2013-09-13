@@ -1,0 +1,61 @@
+/* Variables */
+
+$color-active: #333; // #28C
+
+
+/* Defaults */
+
+* {
+	@include box-sizing(border-box);
+}
+
+body, html {
+	font: 16px/1.5 'Helvetica Neue', sans-serif;
+	height: 100%;
+	background: #EEE;
+	color: #333;
+}
+
+a {
+	color: $color-active;
+}
+
+h1, h2, h3, h4 {
+	line-height: 1.5em;
+}
+
+h1 {
+	font-size: 4em;
+	line-height: 1em;
+	margin-bottom: 0.5em;
+}
+
+h2 {
+	font-size: 2em;
+}
+
+h3 {
+	font-size: 1.5em;
+}
+
+h4 {
+	font-size: 1.25em;
+}
+
+p {
+	margin-bottom: 1em;
+}
+
+strong {
+	font-weight: bold;
+}
+
+sup {
+	vertical-align: super;
+}
+
+ul {
+	font-size: 1em;
+	list-style: disc;
+	padding-left: 2em;
+}
